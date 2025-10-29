@@ -10,9 +10,9 @@ export const useLogin = () => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch("https://survey-api-dj9k.onrender.com/user/login", {
+    const response = await fetch("http://localhost:5000/user/login", {
       method: "POST",
-      mode: 'no-cors',
+      // mode: 'no-cors',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password, role }),
     });

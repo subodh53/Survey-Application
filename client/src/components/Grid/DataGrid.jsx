@@ -20,9 +20,9 @@ function DataGridComponent() {
 
   const fetchAllSurveyData = async (fetchOptions) => {
     try {
-      const response = await fetch("https://survey-api-dj9k.onrender.com/api/surveys/", {
+      const response = await fetch("http://localhost:5000/api/surveys/", {
         method: "GET",
-        mode: 'no-cors',
+        // mode: 'no-cors',
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${user.token}`,
@@ -45,7 +45,7 @@ function DataGridComponent() {
   const fetchSurveyDataById = async (surveyId) => {
     try {
       const response = await fetch(
-        `https://survey-api-dj9k.onrender.com/api/surveys/${surveyId}`,
+        `http://localhost:5000/api/surveys/${surveyId}`,
         {
           headers: {
             "Content-Type": "application/json",

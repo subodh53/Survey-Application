@@ -98,7 +98,7 @@ export function TrueOrFalseResult(props) {
           color: "#008cba",
         }}
       >
-        សំណួរទី {props.index}: {props.question.question}
+        Question {props.index}: {props.question.question}
       </h4>
       <div
         style={{

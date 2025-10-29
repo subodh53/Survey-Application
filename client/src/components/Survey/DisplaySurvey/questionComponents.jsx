@@ -44,10 +44,10 @@ export function ShortResponse(props) {
 
   useEffect(() => {
     // Derive the values of the required variables
-    const getLocationButton = props.question.question.includes("ទីតាំង");
+    const getLocationButton = props.question.question.includes("location");
 
     // Update the state variables
-    if (getLocationButton && currLocation === "ចុចប៊ូតុងយកទីតាំង") {
+    if (getLocationButton && currLocation === "Click the Location button") {
       getLocation();
     }
   }, []);

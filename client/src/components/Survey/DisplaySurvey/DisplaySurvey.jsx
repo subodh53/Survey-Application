@@ -25,7 +25,7 @@ const DisplaySurvey = (props) => {
   const callApi = useCallback(
     async (url, fetchOptions) => {
       try {
-        const response = await fetch(`https://survey-api-dj9k.onrender.com${url}`, {
+        const response = await fetch(`http://localhost:5000${url}`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
             "Content-Type": "application/json",
@@ -72,7 +72,7 @@ const DisplaySurvey = (props) => {
 
     callApi(`/api/surveys/${id}`, {
       method: "GET",
-      mode: 'no-cors',
+      // mode: 'no-cors',
     });
   }, [user, id]);
 
@@ -180,10 +180,10 @@ const DisplaySurvey = (props) => {
     // Save response to database
     try {
       const response = await fetch(
-        `https://survey-api-dj9k.onrender.com/api/surveys/update-responses/${survey._id}`,
+        `http://localhost:5000/api/surveys/update-responses/${survey._id}`,
         {
           method: "PUT",
-          mode: 'no-cors',
+          // mode: 'no-cors',
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${user.token}`,

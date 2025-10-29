@@ -48,7 +48,7 @@ const DisplaySurveyList = (props) => {
 
   const callApi = useCallback(async (userId) => {
     try {
-      const response = await fetch(`https://survey-api-dj9k.onrender.com/api/surveys/surveys-by-user/${userId}`, {
+      const response = await fetch(`http://localhost:5000/api/surveys/surveys-by-user/${userId}`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${user.token}`,
@@ -111,7 +111,7 @@ const DisplaySurveyList = (props) => {
             }}
           >
             <div className="text-muted" style={{ padding: 5, marginLeft: 5 }}>
-              ទទួលបាន​ការឆ្លើយតបចំនួន {survey.responseTotal}
+              Responses Received: {survey.responseTotal}
             </div>
 
             {user && user.role === "admin" && (
@@ -235,7 +235,7 @@ const DisplaySurveyList = (props) => {
               >
                 {user && user.id === "admin"
                   ? "Go to survey"
-                  : "ចូលទៅកាន់ការស្ទង់មតិ​​​​​"}{" "}
+                  : "Go to survey​​​​​"}{" "}
                 &nbsp;
                 <FaLink />
               </Link>
@@ -257,9 +257,9 @@ const DisplaySurveyList = (props) => {
   // Confirm delete survey modal
   const handleConfirmDelete = async () => {
     try {
-      const reponse = await fetch(`https://survey-api-dj9k.onrender.com/api/surveys/delete/${surveyIdToDelete}`, {
+      const reponse = await fetch(`http://localhost:5000/api/surveys/delete/${surveyIdToDelete}`, {
         method: "DELETE",
-        mode: 'no-cors',
+        // mode: 'no-cors',
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${user.token}`,
@@ -434,7 +434,7 @@ const DisplaySurveyList = (props) => {
               borderRadius: 10,
             }}
           >
-            <h1 style={{ fontSize: 4 + "rem" }}>ស្វាគមន៍មកកាន់ការស្ទង់មតិ</h1>
+            <h1 style={{ fontSize: 4 + "rem" }}>Welcome To The Survey</h1>
             <hr className="userLineBreak" />
           </Container>
         </main>
@@ -455,7 +455,7 @@ const DisplaySurveyList = (props) => {
           >
             {user && user.role === "admin"
               ? "Your Surveys"
-              : "ការស្ទង់មតិរបស់អ្នក"}
+              : "Your Surveys"}
           </h2>
           {tableItems && <Container>{tableItems}</Container>}
 
@@ -470,7 +470,7 @@ const DisplaySurveyList = (props) => {
               <Modal.Title>Delete Confirmation</Modal.Title>
             </Modal.Header>
             <Modal.Body style={{ fontFamily: "Nokora", color: "#008cba" }}>
-              <p>តើអ្នកប្រាកដថាចង់លុបការស្ទង់មតិមួយនេះទេ?</p>
+              <p>Are you sure you want to delete this survey?</p>
             </Modal.Body>
             <Modal.Footer>
               <Button
