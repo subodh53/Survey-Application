@@ -40,7 +40,7 @@ export function ShortResponseResult(props) {
             margin: "10px",
           }}
         >
-          សំណួរទី {props.index}: {props.question.question}
+          Question {props.index}: {props.question.question}
         </h4>
       </div>
       <div style={{ overflowY: "scroll", height: 300 }}>
@@ -48,7 +48,7 @@ export function ShortResponseResult(props) {
           <TableHead>
             <TableRow>
               <TableCell style={{ color: "#008cba", fontFamily: "Nokora" }}>
-                ការឆ្លើយតប
+                Responses
               </TableCell>
             </TableRow>
           </TableHead>
